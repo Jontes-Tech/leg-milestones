@@ -19,7 +19,7 @@ async def on_ready():
                 if av == 'None':
                     pass
                 else:
-                    av = av.replace("?size=1024","?size=64")
+                    av = av.replace("?size=1024","?size=128")
                     fname = str(uid) + '.png'
                     print(av)
                     r = requests.get(av)
@@ -29,5 +29,5 @@ async def on_ready():
                         open("defaults/"+fname,'wb').write(r.content)
                     else:
                         print("Error")
-    print('finished downloading - you might wanna run mogrify -resize 64x64 *.png in the defaults directory')
+    print('finished downloading - you might wanna run mogrify -resize 128x128 *.png in the defaults directory')
 client.run(token)
